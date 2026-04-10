@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergency Preparedness: Building Everyday Resilience</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #EEF2F6;
+    color: #1B2A3B;
+    min-height: 100vh;
+  }
+
+  :root {
+    --orange: #E8622A;
+    --orange-mid: #F5956A;
+    --orange-light: #FDF0E8;
+    --orange-text: #7A3010;
+    --navy: #1B2A3B;
+    --navy-mid: #2C4159;
+    --white: #FFFFFF;
+    --gray-bg: #F4F6F8;
+    --gray-border: #E2E8EE;
+    --text: #1B2A3B;
+    --text-muted: #6B7F93;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --shadow: 0 2px 12px rgba(27,42,59,0.08);
+    --shadow-md: 0 4px 24px rgba(27,42,59,0.12);
+  }
+
+  /* ── LAYOUT ── */
+  .page-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--orange); }
+  .breadcrumb-sep { color: #C0CCD8; }
+  .breadcrumb-current { color: var(--text); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    border-radius: var(--radius);
+    padding: 36px 40px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: var(--shadow-md);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--orange-mid);
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 30px;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero-desc {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 20px;
+  }
+  .hero-pills {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .pill {
+    font-size: 12px;
+    font-weight: 500;
+    background: rgba(255,255,255,0.09);
+    color: rgba(255,255,255,0.75);
+    border: 0.5px solid rgba(255,255,255,0.18);
+    border-radius: 100px;
+    padding: 4px 13px;
+  }
+  .pill-orange {
+    background: var(--orange);
+    color: var(--white);
+    border-color: var(--orange);
+  }
+  .hero-badge {
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius);
+    padding: 22px 28px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+  .hero-badge-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    color: var(--orange-mid);
+    line-height: 1;
+  }
+  .hero-badge-label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+
+  /* ── SECTION INTRO ── */
+  .section-intro { margin-bottom: 16px; }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--orange-text);
+    background: var(--orange-light);
+    border: 0.5px solid var(--orange-mid);
+    border-radius: 100px;
+    padding: 3px 12px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .section-tag-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--orange);
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .section-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 660px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--gray-border);
+    margin: 32px 0;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    border: 0.5px solid var(--gray-border);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+  .card-body { padding: 24px 26px; }
+
+  /* ── GRID ── */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+
+  /* ── VIDEO SECTION ── */
+  .video-thumb {
+    background: var(--navy);
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    cursor: pointer;
+  }
+  .video-thumb::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.45) 100%);
+  }
+  .play-btn {
+    width: 56px;
+    height: 56px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: transform 0.2s, background 0.2s;
+  }
+  .play-btn:hover { transform: scale(1.08); background: #C44E1F; }
+  .play-btn svg { margin-left: 4px; }
+  .video-label { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.9); z-index: 1; }
+  .video-meta { font-size: 12px; color: rgba(255,255,255,0.5); z-index: 1; }
+  .video-placeholder-note {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(232,98,42,0.85);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 100px;
+    z-index: 2;
+    letter-spacing: 0.04em;
+  }
+
+  .video-info { padding: 18px 24px; border-top: 1px solid var(--gray-border); }
+  .video-info-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+  .video-info-body { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+  .chip {
+    font-size: 11px;
+    background: var(--gray-bg);
+    color: var(--text-muted);
+    border: 0.5px solid var(--gray-border);
+    border-radius: 100px;
+    padding: 3px 11px;
+  }
+
+  /* ── PLANNER SECTION ── */
+  .planner-steps {
+    border: 0.5px solid var(--gray-border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+  .ps-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-bottom: 0.5px solid var(--gray-border);
+    font-size: 13px;
+    color: var(--text-muted);
+    background: var(--white);
+    transition: background 0.15s;
+  }
+  .ps-row:last-child { border-bottom: none; }
+  .ps-row:hover { background: var(--gray-bg); }
+  .ps-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .ps-num-orange { background: var(--orange); }
+  .ps-label { flex: 1; }
+  .ps-tag {
+    font-size: 10px;
+    color: var(--orange-text);
+    background: var(--orange-light);
+    border-radius: 100px;
+    padding: 2px 8px;
+    font-weight: 500;
+  }
+
+  .how-to-step {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+  .how-to-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--orange);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .how-to-text {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .how-to-text strong { color: var(--text); font-weight: 500; }
+
+  /* ── KNOWLEDGE CHECK ── */
+  .kc-stat {
+    background: var(--gray-bg);
+    border: 0.5px solid var(--gray-border);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+  }
+  .kc-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .kc-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .kc-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  /* ── MICROSOFT FORM EMBED ── */
+  .form-embed-wrap {
+    background: var(--gray-bg);
+    border-radius: var(--radius-sm);
+    border: 0.5px solid var(--gray-border);
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  .form-placeholder {
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .form-placeholder-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--orange-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+  }
+  .form-placeholder-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .form-placeholder-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto 16px;
+  }
+  .form-placeholder-code {
+    font-family: monospace;
+    font-size: 12px;
+    background: #E8EDF2;
+    color: var(--orange-text);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--orange);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 11px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+  }
+  .btn-primary:hover { background: #C44E1F; transform: translateY(-1px); }
+  .btn-secondary {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    border: 0.5px solid var(--gray-border);
+    border-radius: var(--radius-sm);
+    padding: 11px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-secondary:hover { background: var(--gray-bg); }
+  .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  /* ── NOTE BOX ── */
+  .note {
+    background: var(--orange-light);
+    border-left: 3px solid var(--orange);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 11px 16px;
+    font-size: 13px;
+    color: var(--orange-text);
+    line-height: 1.6;
+  }
+  .note strong { font-weight: 600; }
+
+  /* ── DOWNLOADS ── */
+  .dl-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 0.5px solid var(--gray-border);
+  }
+  .dl-row:last-child { border-bottom: none; }
+  .dl-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gray-bg);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .dl-info { flex: 1; }
+  .dl-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .dl-meta { font-size: 12px; color: var(--text-muted); }
+  .dl-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--orange);
+    background: none;
+    border: 0.5px solid var(--orange);
+    border-radius: var(--radius-sm);
+    padding: 6px 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .dl-btn:hover { background: var(--orange-light); }
+
+  /* ── FEMA LINKS ── */
+  .link-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 0.5px solid var(--gray-border);
+  }
+  .link-row:last-child { border-bottom: none; }
+  .link-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+  .link-label { flex: 1; font-size: 13px; color: var(--text-muted); }
+  .link-url { font-size: 12px; color: var(--orange); text-decoration: none; font-weight: 500; }
+  .link-url:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    background: var(--white);
+    border: 0.5px solid var(--gray-border);
+    border-radius: var(--radius);
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    box-shadow: var(--shadow);
+  }
+  .footer-text { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+  .footer-text strong { color: var(--text); font-weight: 500; display: block; margin-bottom: 2px; }
+
+  /* ── SECTION LABEL ── */
+  .label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 680px) {
+    .hero { flex-direction: column; padding: 24px; }
+    .hero-title { font-size: 22px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .page-wrap { padding: 16px 16px 48px; }
+    .card-body { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="#">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="#">Safety</a>
+    <span class="breadcrumb-sep">/</span>
+    <span class="breadcrumb-current">Emergency Preparedness</span>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow">Q4 2026 &nbsp;·&nbsp; Employee Safety Training</div>
+      <h1 class="hero-title">Emergency Preparedness:<br>Building Everyday Resilience</h1>
+      <p class="hero-desc">This page has everything you need for our Q4 preparedness campaign. Watch the training, fill in your personal emergency plan, and complete the knowledge check — all at your own pace.</p>
+      <div class="hero-pills">
+        <span class="pill pill-orange">Complete by December 31</span>
+        <span class="pill">~18 min training</span>
+        <span class="pill">Print your plan</span>
+        <span class="pill">Source: FEMA / Ready.gov</span>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-num">3</div>
+      <div class="hero-badge-label">things to do<br>on this page</div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 1: TRAINING VIDEO ══ -->
+  <div class="section-intro">
+    <div class="section-tag"><div class="section-tag-dot"></div>Training Video</div>
+    <h2 class="section-title">Watch the training</h2>
+    <p class="section-desc">Five short sections covering the essentials — why preparedness matters, how to understand your risk, what to do when something happens, how to make a plan, and how to take action. Watch all at once or come back to finish.</p>
+  </div>
+
+  <div class="card">
+    <!-- VIDEO PLACEHOLDER — replace src with your video embed URL -->
+    <div class="video-thumb" onclick="alert('Replace this placeholder with your video embed.')">
+      <span class="video-placeholder-note">VIDEO PLACEHOLDER</span>
+      <div class="play-btn">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polygon points="7,4 17,10 7,16" fill="white"/></svg>
+      </div>
+      <div class="video-label">Emergency Preparedness: Building Everyday Resilience</div>
+      <div class="video-meta">~18 minutes &nbsp;·&nbsp; 5 sections &nbsp;·&nbsp; Knowledge check included</div>
+    </div>
+    <!-- TO ADD YOUR VIDEO: Replace the div above with an iframe, e.g.:
+    <iframe src="YOUR_VIDEO_EMBED_URL" width="100%" style="aspect-ratio:16/9;border:none;" allowfullscreen></iframe>
+    -->
+    <div class="video-info">
+      <div class="video-info-title">What you'll cover</div>
+      <div class="video-info-body">The training is split into 5 focused sections. A knowledge check appears at the end of the full video — you'll find it in the section below.</div>
+      <div class="chips">
+        <span class="chip">1 &nbsp;·&nbsp; Are You Prepared?</span>
+        <span class="chip">2 &nbsp;·&nbsp; Know Your Risk</span>
+        <span class="chip">3 &nbsp;·&nbsp; Risk to Response</span>
+        <span class="chip">4 &nbsp;·&nbsp; Make a Plan</span>
+        <span class="chip">5 &nbsp;·&nbsp; Take Action</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ SECTION 2: PLANNER ══ -->
+  <div class="section-intro">
+    <div class="section-tag"><div class="section-tag-dot"></div>Personal Emergency Planner</div>
+    <h2 class="section-title">Build your family emergency plan</h2>
+    <p class="section-desc">The planner walks you through 5 steps to build a real, personalized emergency plan for your household. Fill in your contacts, meeting spots, and supply checklist — then print it and keep it somewhere accessible. You can do this at home with your family.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div class="grid-2" style="gap:28px; align-items:start;">
+
+        <div>
+          <div class="label">What's inside the planner</div>
+          <div class="planner-steps">
+            <div class="ps-row"><div class="ps-num">1</div><span class="ps-label">Know your local risks</span></div>
+            <div class="ps-row"><div class="ps-num">2</div><span class="ps-label">Family communication plan &amp; contacts</span><span class="ps-tag">fillable</span></div>
+            <div class="ps-row"><div class="ps-num">3</div><span class="ps-label">4 layered meeting spots</span><span class="ps-tag">fillable</span></div>
+            <div class="ps-row"><div class="ps-num">4</div><span class="ps-label">Pets, medications &amp; documents</span><span class="ps-tag">fillable</span></div>
+            <div class="ps-row"><div class="ps-num ps-num-orange">5</div><span class="ps-label">Go-bag &amp; 72-hour home kit checklist</span></div>
+          </div>
+          <div class="note">You can add multiple family members, pets, and out-of-state contacts. When you're done, click <strong>Print My Plan</strong> to save your completed emergency plan.</div>
+        </div>
+
+        <div>
+          <div class="label">How to use it</div>
+          <div style="margin-bottom:20px;">
+            <div class="how-to-step">
+              <div class="how-to-num">1</div>
+              <div class="how-to-text">Click <strong>Open Planner</strong> — it opens in a new browser tab, no download needed</div>
+            </div>
+            <div class="how-to-step">
+              <div class="how-to-num">2</div>
+              <div class="how-to-text">Work through each section — check off tasks and fill in your family's real details</div>
+            </div>
+            <div class="how-to-step">
+              <div class="how-to-num">3</div>
+              <div class="how-to-text">Click <strong>Print My Plan</strong> to save or print your completed emergency plan</div>
+            </div>
+          </div>
+          <div class="btn-row">
+            <!-- PLANNER LINK — replace # with the URL to your hosted planner HTML file -->
+            <a href="#" target="_blank" class="btn-primary">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1" y="1" width="13" height="13" rx="2" stroke="white" stroke-width="1.3"/><path d="M4.5 7.5h6M4.5 5h6M4.5 10h4" stroke="white" stroke-width="1.3" stroke-linecap="round"/></svg>
+              Open Planner
+            </a>
+            <!-- WORD DOC DOWNLOAD — replace # with the URL to your Word checklist file -->
+            <a href="#" class="btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M4 12.5v-10a1 1 0 011-1h6l3 3v8a1 1 0 01-1 1H5a1 1 0 01-1-1z" stroke="currentColor" stroke-width="1.3"/><path d="M10 1.5v3h3" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M5.5 8.5h4M5.5 10.5h2.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              Download Word version
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ SECTION 3: KNOWLEDGE CHECK ══ -->
+  <div class="section-intro">
+    <div class="section-tag"><div class="section-tag-dot"></div>Knowledge Check</div>
+    <h2 class="section-title">Complete the knowledge check</h2>
+    <p class="section-desc">After watching the training, complete this short knowledge check to confirm you're done. It covers the key ideas from all 5 sections and takes about 5 minutes. Complete it by December 31 to be entered in the raffle.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+
+      <div class="grid-3" style="margin-bottom:22px;">
+        <div class="kc-stat">
+          <div class="kc-num">1</div>
+          <div class="kc-label">knowledge check</div>
+          <div class="kc-desc">One form covering all 5 sections of the training. Complete it after watching.</div>
+        </div>
+        <div class="kc-stat">
+          <div class="kc-num">~5</div>
+          <div class="kc-label">minutes to complete</div>
+          <div class="kc-desc">Short and straightforward — a quick check to make sure the key ideas landed.</div>
+        </div>
+        <div class="kc-stat">
+          <div class="kc-num">1</div>
+          <div class="kc-label">raffle entry on completion</div>
+          <div class="kc-desc">Complete by December 31 to be entered. Winner announced at the January all-hands.</div>
+        </div>
+      </div>
+
+      <!-- MICROSOFT FORM EMBED -->
+      <!-- TO ADD YOUR FORM: Replace the placeholder below with your Microsoft Form embed code.
+           In Microsoft Forms: Share → Embed → Copy the iframe code and paste it here. -->
+      <div class="form-embed-wrap">
+        <div class="form-placeholder">
+          <div class="form-placeholder-icon">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="18" height="18" rx="3" stroke="#E8622A" stroke-width="1.5"/><path d="M7 8h8M7 11h8M7 14h5" stroke="#E8622A" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="form-placeholder-title">Microsoft Form — Knowledge Check</div>
+          <div class="form-placeholder-desc">Your Microsoft Form will appear here. Once you have the form link, replace this placeholder with your embed code.</div>
+          <div class="form-placeholder-code">Replace with: &lt;iframe src="YOUR_FORM_URL" ...&gt;&lt;/iframe&gt;</div>
+        </div>
+        <!-- PASTE YOUR MICROSOFT FORM IFRAME HERE — example:
+        <iframe
+          src="https://forms.office.com/Pages/ResponsePage.aspx?id=YOUR_FORM_ID"
+          width="100%"
+          height="600"
+          frameborder="0"
+          marginwidth="0"
+          marginheight="0"
+          style="border:none; width:100%;"
+          allowfullscreen>
+        </iframe>
+        -->
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ══ DOWNLOADS + FEMA LINKS ══ -->
+  <div class="grid-2" style="margin-bottom:32px;">
+
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-body">
+        <div class="label">Reference documents</div>
+        <div class="dl-row">
+          <div class="dl-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="11" height="14" rx="1.5" stroke="#6B7F93" stroke-width="1.3"/><path d="M6 6h7M6 9h7M6 12h4" stroke="#6B7F93" stroke-width="1.3" stroke-linecap="round"/><path d="M14 13v5m0 0l-2-2m2 2l2-2" stroke="#E8622A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="dl-info">
+            <div class="dl-name">Personal Preparedness Checklist</div>
+            <div class="dl-meta">Full 5-step checklist &nbsp;·&nbsp; Word doc &nbsp;·&nbsp; 3 pages</div>
+          </div>
+          <!-- Replace # with your Word doc URL -->
+          <button class="dl-btn" onclick="window.open('#')">Download</button>
+        </div>
+        <div class="dl-row">
+          <div class="dl-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="3" y="2" width="11" height="14" rx="1.5" stroke="#6B7F93" stroke-width="1.3"/><path d="M6 6h7M6 9h5" stroke="#6B7F93" stroke-width="1.3" stroke-linecap="round"/><path d="M14 13v5m0 0l-2-2m2 2l2-2" stroke="#E8622A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="dl-info">
+            <div class="dl-name">Quick-Start Card</div>
+            <div class="dl-meta">3 essential steps + go-bag list &nbsp;·&nbsp; Word doc &nbsp;·&nbsp; 1 page</div>
+          </div>
+          <!-- Replace # with your Quick-Start Card URL -->
+          <button class="dl-btn" onclick="window.open('#')">Download</button>
+        </div>
+        <div class="note" style="margin-top:14px;">Print the Quick-Start Card and keep it somewhere visible — fridge, desk drawer, or go-bag.</div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-body">
+        <div class="label">FEMA &amp; Ready.gov resources</div>
+        <div class="link-row"><div class="link-dot"></div><span class="link-label">Build a kit</span><a class="link-url" href="https://www.ready.gov/kit" target="_blank">ready.gov/kit</a></div>
+        <div class="link-row"><div class="link-dot"></div><span class="link-label">Make a plan</span><a class="link-url" href="https://www.ready.gov/plan" target="_blank">ready.gov/plan</a></div>
+        <div class="link-row"><div class="link-dot"></div><span class="link-label">Know your risks</span><a class="link-url" href="https://www.ready.gov/know-your-risk" target="_blank">ready.gov/know-your-risk</a></div>
+        <div class="link-row"><div class="link-dot"></div><span class="link-label">Sign up for local emergency alerts</span><a class="link-url" href="https://www.ready.gov/alerts" target="_blank">ready.gov/alerts</a></div>
+        <div class="link-row"><div class="link-dot"></div><span class="link-label">Full preparedness guide</span><a class="link-url" href="https://www.ready.gov" target="_blank">ready.gov</a></div>
+        <div class="note" style="margin-top:14px;">All resources are free. Start with <strong>ready.gov/kit</strong> for a detailed supply checklist.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="page-footer">
+    <div class="footer-text">
+      <strong>Questions about this training?</strong>
+      Reach out to your Safety Team — we're happy to help.
+    </div>
+    <div class="btn-row">
+      <!-- Replace # with your Safety Team email or contact page URL -->
+      <a href="mailto:safety@yourcompany.com" class="btn-primary">Contact Safety Team</a>
+      <!-- Replace # with your feedback form URL -->
+      <a href="#" class="btn-secondary">Leave feedback</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
