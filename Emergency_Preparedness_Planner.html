@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personal Emergency Preparedness Planner</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
 <style>
   :root {
-    --orange: #E8622A;
-    --orange-light: #FDF0E8;
-    --orange-mid: #F5956A;
+    --orange: #A6C1D4;
+    --orange-light: #EEF4F8;
+    --orange-mid: #C2D8E6;
     --navy: #1B2A3B;
     --navy-mid: #2C4159;
     --slate: #4A6380;
@@ -25,16 +25,16 @@
     --shadow: 0 2px 12px rgba(27,42,59,0.08);
     --shadow-md: 0 4px 24px rgba(27,42,59,0.12);
   }
- 
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
- 
+
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     background: #EEF2F6;
     color: var(--text);
     min-height: 100vh;
   }
- 
+
   /* ── HEADER ── */
   .site-header {
     background: var(--navy);
@@ -54,14 +54,14 @@
     gap: 16px;
   }
   .header-title {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     font-size: 18px;
     color: var(--white);
     line-height: 1.2;
   }
   .header-title span {
     display: block;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     font-size: 11px;
     font-weight: 500;
     color: var(--orange-mid);
@@ -89,7 +89,7 @@
     font-weight: 700;
     color: var(--orange-mid);
   }
- 
+
   /* ── PROGRESS BAR ── */
   .progress-bar-wrap {
     background: rgba(255,255,255,0.06);
@@ -101,17 +101,17 @@
     transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
     width: 0%;
   }
- 
+
   /* ── LAYOUT ── */
   .container {
     max-width: 860px;
     margin: 0 auto;
     padding: 32px 24px 80px;
   }
- 
+
   /* ── INTRO BANNER ── */
   .intro-banner {
-    background: linear-gradient(135deg, var(--orange) 0%, #C44E1F 100%);
+    background: linear-gradient(135deg, #A6C1D4 0%, #7AACC4 100%);
     border-radius: var(--radius);
     padding: 28px 32px;
     margin-bottom: 32px;
@@ -126,7 +126,7 @@
     margin-top: 2px;
   }
   .intro-banner h2 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     font-size: 22px;
     color: var(--white);
     margin-bottom: 6px;
@@ -136,7 +136,7 @@
     color: rgba(255,255,255,0.85);
     line-height: 1.6;
   }
- 
+
   /* ── SECTION CARD ── */
   .section-card {
     background: var(--white);
@@ -147,7 +147,7 @@
     transition: box-shadow 0.2s;
   }
   .section-card:hover { box-shadow: var(--shadow-md); }
- 
+
   .section-header {
     display: flex;
     align-items: center;
@@ -160,7 +160,7 @@
   }
   .section-header:hover { background: var(--gray); }
   .section-header.open { border-bottom-color: var(--gray-mid); }
- 
+
   .step-badge {
     width: 36px;
     height: 36px;
@@ -176,7 +176,7 @@
     transition: background 0.3s;
   }
   .step-badge.done { background: var(--green); }
- 
+
   .section-header-text { flex: 1; }
   .section-header-text h3 {
     font-size: 16px;
@@ -188,7 +188,7 @@
     font-size: 12px;
     color: var(--text-muted);
   }
- 
+
   .section-progress {
     font-size: 12px;
     font-weight: 600;
@@ -196,7 +196,7 @@
     white-space: nowrap;
   }
   .section-progress.done { color: var(--green); }
- 
+
   .chevron {
     width: 20px;
     height: 20px;
@@ -205,16 +205,16 @@
     flex-shrink: 0;
   }
   .section-header.open .chevron { transform: rotate(180deg); }
- 
+
   .section-body {
     display: none;
     padding: 20px 24px 24px;
   }
   .section-body.open { display: block; }
- 
+
   /* ── CHECKLIST ── */
   .checklist { display: flex; flex-direction: column; gap: 2px; }
- 
+
   .check-item {
     display: flex;
     align-items: flex-start;
@@ -227,9 +227,9 @@
   }
   .check-item:hover { background: var(--gray); }
   .check-item.checked { background: var(--green-light); }
- 
+
   .check-item input[type="checkbox"] { display: none; }
- 
+
   .checkbox-visual {
     width: 22px;
     height: 22px;
@@ -249,7 +249,7 @@
   }
   .checkbox-visual svg { display: none; }
   .check-item.checked .checkbox-visual svg { display: block; }
- 
+
   .check-label { flex: 1; }
   .check-label strong {
     display: block;
@@ -269,7 +269,7 @@
     color: var(--text-muted);
     line-height: 1.4;
   }
- 
+
   /* ── FORM FIELDS ── */
   .form-section { margin-top: 20px; }
   .form-section-title {
@@ -282,7 +282,7 @@
     padding-bottom: 8px;
     border-bottom: 2px solid var(--orange-light);
   }
- 
+
   .field-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -291,11 +291,11 @@
   }
   .field-grid.single { grid-template-columns: 1fr; }
   .field-grid.triple { grid-template-columns: 1fr 1fr 1fr; }
- 
+
   @media (max-width: 600px) {
     .field-grid, .field-grid.triple { grid-template-columns: 1fr; }
   }
- 
+
   .field-group { display: flex; flex-direction: column; gap: 5px; }
   .field-group label {
     font-size: 12px;
@@ -307,7 +307,7 @@
   .field-group input,
   .field-group textarea,
   .field-group select {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     font-size: 14px;
     color: var(--text);
     background: var(--gray);
@@ -324,10 +324,10 @@
   .field-group select:focus {
     border-color: var(--orange);
     background: var(--white);
-    box-shadow: 0 0 0 3px rgba(232,98,42,0.1);
+    box-shadow: 0 0 0 3px rgba(166,193,212,0.15);
   }
   .field-group textarea { min-height: 70px; }
- 
+
   /* Meeting spot cards */
   .meeting-grid {
     display: grid;
@@ -336,7 +336,7 @@
     margin-bottom: 16px;
   }
   @media (max-width: 600px) { .meeting-grid { grid-template-columns: 1fr; } }
- 
+
   .meeting-card {
     background: var(--gray);
     border: 1.5px solid var(--gray-mid);
@@ -375,7 +375,7 @@
     letter-spacing: 0.06em;
   }
   .meeting-card input {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     font-size: 13px;
     color: var(--text);
     background: transparent;
@@ -398,18 +398,18 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
- 
+
   /* ── DIVIDER ── */
   .divider {
     height: 1px;
     background: var(--gray-mid);
     margin: 20px 0;
   }
- 
+
   /* ── COMPLETE BANNER ── */
   .complete-banner {
     display: none;
-    background: linear-gradient(135deg, var(--green) 0%, #1F6048 100%);
+    background: linear-gradient(135deg, #2E7D5E 0%, #1F6048 100%);
     border-radius: var(--radius);
     padding: 28px 32px;
     margin-bottom: 32px;
@@ -419,7 +419,7 @@
   }
   .complete-banner.show { display: block; }
   .complete-banner h2 {
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     font-size: 26px;
     color: var(--white);
     margin-bottom: 8px;
@@ -429,7 +429,7 @@
     color: rgba(255,255,255,0.85);
     margin-bottom: 20px;
   }
- 
+
   /* ── PRINT BUTTON ── */
   .btn-row {
     display: flex;
@@ -438,7 +438,7 @@
     flex-wrap: wrap;
   }
   .btn {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     font-size: 14px;
     font-weight: 600;
     padding: 12px 24px;
@@ -461,7 +461,7 @@
     border: 1.5px solid rgba(255,255,255,0.4);
   }
   .btn-outline:hover { background: rgba(255,255,255,0.1); transform: translateY(-1px); }
- 
+
   .print-btn-fixed {
     position: fixed;
     bottom: 24px;
@@ -471,7 +471,7 @@
     border: none;
     border-radius: 100px;
     padding: 14px 22px;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
@@ -485,9 +485,9 @@
   .print-btn-fixed:hover {
     background: var(--orange);
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(232,98,42,0.35);
+    box-shadow: 0 6px 24px rgba(166,193,212,0.35);
   }
- 
+
   /* ── NOTE BOX ── */
   .note-box {
     background: var(--orange-light);
@@ -499,7 +499,7 @@
     color: var(--navy);
     line-height: 1.5;
   }
- 
+
   /* ── ANIMATIONS ── */
   @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(16px); }
@@ -511,10 +511,10 @@
   .section-card:nth-child(3) { animation-delay: 0.15s; }
   .section-card:nth-child(4) { animation-delay: 0.20s; }
   .section-card:nth-child(5) { animation-delay: 0.25s; }
- 
+
   /* ── ADD MORE BUTTON ── */
   .add-btn {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
     font-size: 13px;
     font-weight: 600;
     color: var(--orange);
@@ -529,8 +529,8 @@
     align-items: center;
     gap: 6px;
   }
-  .add-btn:hover { background: #FAE0D0; border-color: var(--orange); }
- 
+  .add-btn:hover { background: #D6E8F2; border-color: var(--orange); }
+
   .dynamic-row { position: relative; }
   .remove-row-btn {
     position: absolute;
@@ -546,24 +546,24 @@
     transition: color 0.2s;
   }
   .remove-row-btn:hover { color: #E53935; }
- 
+
   @media print {
     .add-btn, .remove-row-btn { display: none !important; }
     .dynamic-row { position: static; }
   }
- 
- 
+
+
   @media print {
     * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     body { background: white; font-size: 11px; }
     .site-header, .print-btn-fixed, .intro-banner, .complete-banner,
     .section-header .chevron, .note-box { display: none !important; }
- 
+
     .container { padding: 0; max-width: 100%; }
- 
+
     /* All section bodies visible */
     .section-body { display: block !important; padding: 12px 16px 16px; }
- 
+
     /* Section cards */
     .section-card {
       box-shadow: none !important;
@@ -573,7 +573,7 @@
       border-radius: 6px;
       overflow: hidden;
     }
- 
+
     /* Section headers — keep orange bar, reduce padding */
     .section-header {
       cursor: default;
@@ -588,7 +588,7 @@
     .section-header-text h3 { font-size: 13px; }
     .section-header-text p { font-size: 11px; }
     .section-progress { font-size: 11px; }
- 
+
     /* Checklist items — compact for print */
     .checklist { gap: 1px; }
     .check-item {
@@ -615,7 +615,7 @@
     .check-item.checked .checkbox-visual svg { display: block; }
     .check-label strong { font-size: 11px; }
     .check-label small { font-size: 10px; }
- 
+
     /* Form fields — show values cleanly */
     .form-section { margin-top: 12px; }
     .form-section-title { font-size: 10px; margin-bottom: 8px; padding-bottom: 5px; }
@@ -632,7 +632,7 @@
       font-size: 11px;
       box-shadow: none !important;
     }
- 
+
     /* Meeting cards */
     .meeting-grid { gap: 8px; margin-bottom: 10px; }
     .meeting-card {
@@ -651,14 +651,14 @@
       padding: 3px 0 !important;
       background: transparent !important;
     }
- 
+
     /* Divider */
     .divider { margin: 10px 0; }
- 
+
     /* Print title */
     h2.print-title {
       display: block !important;
-      font-family: 'DM Serif Display', serif;
+      font-family: 'Segoe UI', Segoe UI, -apple-system, sans-serif;
       font-size: 18px;
       color: #1B2A3B;
       margin-bottom: 4px;
@@ -669,22 +669,21 @@
       color: #888;
       margin-bottom: 14px;
       padding-bottom: 10px;
-      border-bottom: 2px solid #E8622A;
+      border-bottom: 2px solid #A6C1D4;
     }
   }
 </style>
 </head>
 <body>
- 
+
 <!-- Hidden print header -->
 <h2 class="print-title" style="display:none;">Personal Emergency Preparedness Plan</h2>
-<span class="print-subtitle" style="display:none;">Emergency Preparedness: Building Everyday Resilience &nbsp;|&nbsp; Employee Safety Training 2026 &nbsp;|&nbsp; Source: FEMA / Ready.gov</span>
- 
+<span class="print-subtitle" style="display:none;">Emergency Preparedness: Building Everyday Resilience &nbsp;|&nbsp; Source: FEMA / Ready.gov</span>
+
 <!-- Header -->
 <header class="site-header">
   <div class="header-inner">
     <div class="header-title">
-      <span>Employee Safety Training 2026</span>
       Emergency Preparedness Planner
     </div>
     <div class="progress-pill">
@@ -696,18 +695,19 @@
     <div class="progress-bar-fill" id="globalBar"></div>
   </div>
 </header>
- 
+
 <div class="container">
- 
+
   <!-- Intro -->
   <div class="intro-banner">
     <div class="intro-icon">🛡️</div>
     <div>
       <h2>Your Personal Emergency Plan</h2>
-      <p>Work through each section at your own pace. Check off tasks as you complete them and fill in your family's real information — when you're done, print or save this page as your actual emergency plan. <strong style="color:white;">Progress, not perfection.</strong></p>
+      <p>Work through each section at your own pace. Check off tasks as you complete them and fill in your family's real information — when you're done, print this page as your actual emergency plan. <strong style="color:white;">Progress, not perfection.</strong></p>
+      <p style="margin-top:10px; font-size:13px; background:rgba(255,255,255,0.12); border-radius:6px; padding:8px 12px; color:rgba(255,255,255,0.9);">📋 <strong>Heads up:</strong> This planner does not save your information. Once you close the tab it will reset. Fill in your details and click <strong>Print My Plan</strong> before closing.</p>
     </div>
   </div>
- 
+
   <!-- Completion banner (hidden until done) -->
   <div class="complete-banner" id="completeBanner">
     <div style="font-size:48px;margin-bottom:12px;">🎉</div>
@@ -718,7 +718,7 @@
       <button class="btn btn-outline" onclick="resetAll()">↺ Start Over</button>
     </div>
   </div>
- 
+
   <!-- ── STEP 1: KNOW YOUR RISK ──────────────────────────────────── -->
   <div class="section-card" id="card-1">
     <div class="section-header" onclick="toggleSection(1)">
@@ -749,7 +749,7 @@
           <div class="check-label"><strong>Note how your risk changes by location</strong><small>Home, workplace, school, commute route</small></div>
         </div>
       </div>
- 
+
       <div class="form-section">
         <div class="form-section-title">📍 My Risk Notes</div>
         <div class="field-grid single">
@@ -771,7 +771,7 @@
       </div>
     </div>
   </div>
- 
+
   <!-- ── STEP 2: COMMUNICATION PLAN ─────────────────────────────── -->
   <div class="section-card" id="card-2">
     <div class="section-header" onclick="toggleSection(2)">
@@ -802,10 +802,10 @@
           <div class="check-label"><strong>Make sure every household member knows the plan</strong><small>Walk through it together, including children</small></div>
         </div>
       </div>
- 
+
       <div class="form-section">
         <div class="form-section-title">📞 My Family Contacts</div>
- 
+
         <div id="family-contacts-list">
           <div class="contact-row field-grid">
             <div class="field-group"><label>Name</label><input type="text" placeholder="Household member name"></div>
@@ -817,7 +817,7 @@
           </div>
         </div>
         <button class="add-btn" onclick="addRow('family-contacts-list', familyRowTemplate(), true)">+ Add another family member</button>
- 
+
         <div class="field-grid" style="margin-top:14px;">
           <div class="field-group">
             <label>Child's school / daycare</label>
@@ -828,9 +828,9 @@
             <input type="tel" placeholder="Phone number">
           </div>
         </div>
- 
+
         <div class="note-box" style="margin-top:16px;">⭐ <strong>Out-of-state contact</strong> — the one person everyone calls first. Local networks get overloaded; out-of-state calls often get through when local ones don't.</div>
- 
+
         <div id="oos-contacts-list" style="margin-top:12px;">
           <div class="oos-row field-grid">
             <div class="field-group"><label>Name</label><input type="text" placeholder="Contact name"></div>
@@ -840,11 +840,11 @@
           </div>
         </div>
         <button class="add-btn" onclick="addRow('oos-contacts-list', oosRowTemplate(), false)">+ Add another out-of-state contact</button>
- 
+
       </div>
     </div>
   </div>
- 
+
   <!-- ── STEP 3: MEETING SPOTS ───────────────────────────────────── -->
   <div class="section-card" id="card-3">
     <div class="section-header" onclick="toggleSection(3)">
@@ -871,11 +871,11 @@
           <div class="check-label"><strong>Confirm out-of-state contacts are ready to host if needed</strong></div>
         </div>
       </div>
- 
+
       <div class="form-section">
         <div class="form-section-title">📌 My Meeting Spots</div>
         <div class="meeting-grid">
- 
+
           <div class="meeting-card">
             <div class="meeting-card-header">
               <div class="meeting-num">1</div>
@@ -886,7 +886,7 @@
             <div class="meeting-card-label">Notes</div>
             <input type="text" placeholder="e.g. Ask for Mrs. Johnson">
           </div>
- 
+
           <div class="meeting-card">
             <div class="meeting-card-header">
               <div class="meeting-num">2</div>
@@ -897,7 +897,7 @@
             <div class="meeting-card-label">Notes</div>
             <input type="text" placeholder="e.g. She's usually home after 3pm">
           </div>
- 
+
           <div class="meeting-card">
             <div class="meeting-card-header">
               <div class="meeting-num">3</div>
@@ -908,7 +908,7 @@
             <div class="meeting-card-label">Notes</div>
             <input type="text" placeholder="e.g. Exit 14 off I-90, left on Pine Rd">
           </div>
- 
+
           <div class="meeting-card">
             <div class="meeting-card-header">
               <div class="meeting-num">4</div>
@@ -919,12 +919,12 @@
             <div class="meeting-card-label">Notes</div>
             <input type="text" placeholder="e.g. 720-555-0198 — has room for all of us">
           </div>
- 
+
         </div>
       </div>
     </div>
   </div>
- 
+
   <!-- ── STEP 4: UNIQUE NEEDS + DOCUMENTS ───────────────────────── -->
   <div class="section-card" id="card-4">
     <div class="section-header" onclick="toggleSection(4)">
@@ -959,10 +959,10 @@
           <div class="check-label"><strong>Keep copies of key documents in your go-bag</strong></div>
         </div>
       </div>
- 
+
       <div class="form-section">
         <div class="form-section-title">🐾 Pets & Special Needs</div>
- 
+
         <div id="pets-list">
           <div class="pet-row field-grid">
             <div class="field-group"><label>Pet name</label><input type="text" placeholder="e.g. Max"></div>
@@ -972,7 +972,7 @@
           </div>
         </div>
         <button class="add-btn" onclick="addRow('pets-list', petRowTemplate(), false)">+ Add another pet</button>
- 
+
         <div class="field-grid" style="margin-top:14px;">
           <div class="field-group">
             <label>Critical medications in household</label>
@@ -992,7 +992,7 @@
       </div>
     </div>
   </div>
- 
+
   <!-- ── STEP 5: BUILD YOUR KITS ────────────────────────────────── -->
   <div class="section-card" id="card-5">
     <div class="section-header" onclick="toggleSection(5)">
@@ -1005,7 +1005,7 @@
       <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="section-body" id="body-5">
- 
+
       <div class="form-section-title" style="margin-bottom:12px;">🎒 Everyday Go-Bag — 24-Hour Kit</div>
       <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;font-style:italic;">Portable. Keep by the door or in your car. Grab it if you need to leave fast.</p>
       <div class="checklist" id="list-5a">
@@ -1018,9 +1018,9 @@
         <div class="check-item" data-section="5"><div class="checkbox-visual"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><polyline points="1,5 4.5,8.5 11,1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-label"><strong>Cash in small bills</strong></div></div>
         <div class="check-item" data-section="5"><div class="checkbox-visual"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><polyline points="1,5 4.5,8.5 11,1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-label"><strong>Copies of key documents</strong><small>ID, insurance card, emergency contacts</small></div></div>
       </div>
- 
+
       <div class="divider"></div>
- 
+
       <div class="form-section-title" style="margin-bottom:12px;">🏠 Home Emergency Kit — 72-Hour Kit</div>
       <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;font-style:italic;">For staying put. Stock enough for every person and pet.</p>
       <div class="checklist" id="list-5b">
@@ -1032,25 +1032,25 @@
         <div class="check-item" data-section="5"><div class="checkbox-visual"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><polyline points="1,5 4.5,8.5 11,1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-label"><strong>Sanitation supplies</strong><small>Hand sanitizer, moist towelettes, garbage bags</small></div></div>
         <div class="check-item" data-section="5"><div class="checkbox-visual"><svg width="12" height="10" viewBox="0 0 12 10" fill="none"><polyline points="1,5 4.5,8.5 11,1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="check-label"><strong>Walked family through communication plan and meeting spots</strong></div></div>
       </div>
- 
+
       <div class="note-box" style="margin-top:16px;">
         🗓️ <strong>Set a reminder to refresh your kit every 6 months.</strong> Replace expired food, water, and medications. Update contacts if anything has changed.
       </div>
     </div>
   </div>
- 
+
 </div><!-- /container -->
- 
+
 <!-- Fixed print button -->
 <button class="print-btn-fixed" onclick="window.print()">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
   Print My Plan
 </button>
- 
+
 <script>
   const TOTALS = [0, 4, 4, 3, 5, 15]; // index = section number
   const GRAND_TOTAL = TOTALS.reduce((a,b) => a+b, 0);
- 
+
   // Attach click handlers to all check-items via event delegation
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.check-item').forEach(function(item) {
@@ -1064,7 +1064,7 @@
     document.querySelector('#card-1 .section-header').classList.add('open');
     document.getElementById('body-1').classList.add('open');
   });
- 
+
   function updateSection(sNum) {
     const checked = document.querySelectorAll('#card-' + sNum + ' .check-item.checked').length;
     const total = TOTALS[sNum];
@@ -1081,7 +1081,7 @@
       badge.textContent = sNum;
     }
   }
- 
+
   function updateGlobal() {
     const total = document.querySelectorAll('.check-item.checked').length;
     document.getElementById('globalCount').textContent = total + ' / ' + GRAND_TOTAL;
@@ -1094,14 +1094,14 @@
       banner.classList.remove('show');
     }
   }
- 
+
   function toggleSection(num) {
     const header = document.querySelector('#card-' + num + ' .section-header');
     const body = document.getElementById('body-' + num);
     header.classList.toggle('open');
     body.classList.toggle('open');
   }
- 
+
   function familyRowTemplate() {
     return '<div class="contact-row field-grid dynamic-row">' +
       '<div class="field-group"><label>Name</label><input type="text" placeholder="Household member name"></div>' +
@@ -1109,7 +1109,7 @@
       '<button class="remove-row-btn" onclick="removeRow(this)" title="Remove">×</button>' +
       '</div>';
   }
- 
+
   function oosRowTemplate() {
     return '<div class="oos-row field-grid dynamic-row">' +
       '<div class="field-group"><label>Name</label><input type="text" placeholder="Contact name"></div>' +
@@ -1119,7 +1119,7 @@
       '<button class="remove-row-btn" onclick="removeRow(this)" title="Remove">×</button>' +
       '</div>';
   }
- 
+
   function petRowTemplate() {
     return '<div class="pet-row field-grid dynamic-row">' +
       '<div class="field-group"><label>Pet name</label><input type="text" placeholder="e.g. Luna"></div>' +
@@ -1129,7 +1129,7 @@
       '<button class="remove-row-btn" onclick="removeRow(this)" title="Remove">×</button>' +
       '</div>';
   }
- 
+
   function addRow(containerId, template, addRemoveToFirst) {
     var container = document.getElementById(containerId);
     // Add remove button to first row if not already there
@@ -1150,11 +1150,11 @@
     div.innerHTML = template;
     container.appendChild(div.firstChild);
   }
- 
+
   function removeRow(btn) {
     btn.closest('.contact-row, .oos-row, .pet-row').remove();
   }
- 
+
   function resetAll() {
     document.querySelectorAll('.check-item').forEach(function(el) { el.classList.remove('checked'); });
     document.querySelectorAll('input[type="text"], input[type="tel"], input[type="email"], textarea').forEach(function(el) { el.value = ''; });
